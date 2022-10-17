@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Noto+Sans+Display:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    background-color: ivory;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Display', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.score-board h1 {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 5rem;
+    color: palevioletred;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.scores {
+    font-size: .75rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: -3%;
+    gap: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.scores h2 {
+    margin-bottom: 0;
+    background-color: palevioletred;
+    border-radius: 20px;
+    padding: 10px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    padding: 50px 3rem;
+}
+
+img {
+    cursor: pointer;
+    padding: 20px 0;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: palevioletred;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    background-color: palevioletred;
+    padding-left: 5px;
+}
+
+.footer a:hover {
+    color: black;
 }

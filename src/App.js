@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import '../src/App.css'
+import GameGrid from './components/GameGrid';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [cardsArray, setCards] = useState([]);
+
+  const handleScore = () => {
+    setCurrentScore(currentScore + 1);
+  }
+
+  const getBestScore = () => {
+    setBestScore((prevScore) => Math.max(prevScore, currentScore));
+  }
+
+  const handleClick = (card) => {
+    setCards((prevArr) => [...prevArr, card]);
+  }
+
+  const reset = () => {
+    setCurrentScore(0);
+    setCards([]);
+  }
+
+  const handleLogic = (e) => {
+    if(!cardsArray.includes(e.target.getAttribute('src'))) {
+      handleClick(e.target.getAttribute('src'));
+      handleScore();
+    } else {
+      getBestScore();
+      reset();
+    }
+  }
+
+  return(
+    <div className='app'>
+      <Header currentScore={currentScore} bestScore={bestScore} />
+      <GameGrid handleLogic={handleLogic}/>
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App;
