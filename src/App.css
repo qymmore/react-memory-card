@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-    background-color: ivory;
+    background-color: beige;
 }
 
 body {
@@ -35,9 +35,9 @@ body {
 }
 
 .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(2, auto);
 }
 
 .card {
@@ -54,14 +54,14 @@ img:hover {
 }
 
 .footer {
+    position: fixed;
     bottom: 0;
     width: 100%;
     left: 0;
     background-color: palevioletred;
     color: white;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    text-align: center;
+    padding: 8px 0;
 }
 
 .footer a {
@@ -74,3 +74,4 @@ img:hover {
 .footer a:hover {
     color: black;
 }
+
