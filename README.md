@@ -4,6 +4,9 @@
 
 ![memory-game](./src/assets/images/memorygame.gif)
 
+## Project 
+The purpose of this project was to create a simple memory game in React where users have to click on each dessert item exactly ONCE. The score updates accordingly and if the user clicks on the same item more than once, the score resets to 0. 
+
 ## Language/libraries 
 - React
 - React states
